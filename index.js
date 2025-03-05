@@ -1,21 +1,40 @@
-document.getElementById('fetchRickMorty').addEventListener('click', fetchRickMortyCharacters);
-
-async function fetchRickMortyCharacters() {
-    try {
-        const response = await fetch('https://rickandmortyapi.com/api/character');
-        const data = await response.json();
-        displayRickMortyCharacters(data.results);
-    } catch (error) {
-        console.error('Error:', error);
-    }
+const searchCharacter=() =>{
+    let character = document.getElementById('search-character').value
+    fetch(`https://rickandmortyapi.com/api/character${character }`)
+    .then(res => res.json())
+    .then(data => displayCharacter(data.data))
 }
 
-function displayRickMortyCharacters(characters) {
-    const charactersList = document.getElementById('rickMortyCharacters');
-    charactersList.innerHTML = ''; // Limpiar la lista antes de agregar nuevos personajes
+const displayCharacter = characters => {
+    const characterContainer = document.getElementById("character-container")
+    characterContainer.innerHTML = ''
     characters.forEach(character => {
-        const li = document.createElement('li');
-        li.textContent = `${character.name} - ${character.status} - ${character.species}`;
-        charactersList.appendChild(li);
+        console.log(character)
+        console.log(character.id)
+        const characterDiv = document.createElement("div")
+        characterDiv.className = "single-result row align-items-center my-3 p-3"
+        characterDiv.innerHTML = `
+        
+                    <div class="col-lg-2 text-center">
+                        <img class src=${character.id} style="height:50px ;" alt=""/>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <h3 class="character-name">${character.name}</h3>
+                        <p class="character-status">Album by <span>${character.status}</span></p>
+                    </div>
+                    <div class="col-lg-6 text-center">   
+                        <speciesCahracter>
+                            <source src=${character.species} type="">
+                        </speciesCharacter>
+                    </div>
+                            `
+        characterContainer.appendChild(charactergDiv)
     });
 }
+
+`
+
+
+    }
+
+
