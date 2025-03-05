@@ -8,15 +8,15 @@ function searchSong()
 }*/
 
 //2. moderna
-const searchSong =() =>
+const buscarPersonaje =() =>
     
 {
      // se guardar el valor digitado por
      // el usuario en el html y se guardar
      // en la variable songName
 
-    let songName = document.getElementById
-    ('search-field').value
+    let characterName = document.getElementById
+    ('search-character').value
 
 
     //se envia la variable songName al api
@@ -24,32 +24,23 @@ const searchSong =() =>
     // cancion o artista
 
     
-    fetch(`https://api.lyrics.ovh/suggest/
-        ${songName}`)
+    fetch(`https://rickandmortyapi.com/api/character
+        ${characterName}`)
 
         .then(res => res.json())
-        .then(data => displaySong(data.data))
+        .then(data => displayRickMortyCharacters(data.data))
 
 }
 
 
-const displaySong = songs => {
-    // esta variable almacena un elemento 
-    // html de tipo div 
-    const songContainer = 
-    document.getElementById("song-container")
-
-    // concatena lineas de html 
-    songContainer.innerHTML = ''
-
-    songs.forEach(song => 
-        {
-
-        // trazar codigo 
-        //    console.log(song)
-        //    console.log(song.album.cover_medium)
-    
-        const songDiv = document.createElement("div")
+function displayRickMortyCharacters(characters) {
+    const charactersList = document.getElementById('rickMortyCharacters');
+    charactersList.innerHTML = ''; // Limpiar la lista antes de agregar nuevos personajes
+    characters.forEach(character => {
+        const li = document.createElement('li');
+        li.textContent = `${character.name} - ${character.status} - ${character.species}`;
+        charactersList.appendChild(li);
+    });
 
 songDiv.className = "single-result row align-items-center my-3 p-3"
 songDiv.innerHTML = ` 
