@@ -32,9 +32,5 @@ const displayCharacter = characters => {
     });
 }
 
-`
-
-
-    }
 
 
