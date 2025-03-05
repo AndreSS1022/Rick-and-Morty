@@ -1,20 +1,49 @@
-.cnt{
-    background-color: #13141b;
-    color: #ffffff;
-    background-image: url(images/bg-image.png);
-    background-repeat: no-repeat;
-    background-position: top;
-    min-height: 100vh;
-}
-#search-character{
-    background-color:rgba(255, 255, 255, 0.9);
-    padding: 22px;
-    border: none;
-    border-radius: 5px;
-    color: black;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
-.single-result{
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid #0b5ed7;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#episodeDetails {
+    margin-top: 20px;
 }
