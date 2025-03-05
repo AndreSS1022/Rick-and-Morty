@@ -1,26 +1,21 @@
-document.getElementById('fetchEpisode').addEventListener('click', fetchEpisodeDetails);
+document.getElementById('fetchRickMorty').addEventListener('click', fetchRickMortyCharacters);
 
-async function fetchEpisodeDetails() {
-    const episodeId = document.getElementById('episodeId').value;
-    const api = `https://rickandmortyapi.com/api/episode/${episodeId}`;
-    
+async function fetchRickMortyCharacters() {
     try {
-        const response = await fetch(api);
-        if (!response.ok) {
-            throw new Error('Episodio no encontrado');
-        }
+        const response = await fetch('https://rickandmortyapi.com/api/character');
         const data = await response.json();
-        displayEpisodeDetails(data);
+        displayRickMortyCharacters(data.results);
     } catch (error) {
-        document.getElementById('episodeDetails').innerHTML = `<p>${error.message}</p>`;
+        console.error('Error:', error);
     }
 }
 
-function displayEpisodeDetails(episode) {
-    const episodeDetails = document.getElementById('episodeDetails');
-    episodeDetails.innerHTML = `
-        <h2>${episode.name}</h2>
-        <p><strong>Fecha de emisión:</strong> ${episode.air_date}</p>
-        <p><strong>Temporada:</strong> ${episode.episode}</p>
-    `;
+function displayRickMortyCharacters(characters) {
+    const charactersList = document.getElementById('rickMortyCharacters');
+    charactersList.innerHTML = ''; // Limpiar la lista antes de agregar nuevos personajes
+    characters.forEach(character => {
+        const li = document.createElement('li');
+        li.textContent = `${character.name} - ${character.status} - ${character.species}`;
+        charactersList.appendChild(li);
+    });
 }
