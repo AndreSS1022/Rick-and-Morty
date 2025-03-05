@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscar Episodios de Rick y Morty</title>
-    <link rel="stylesheet" href="index.css">
+    <title>Rick y Morty API</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Episodios de Rick y Morty</h1>
+        <h1>Personajes de Rick y Morty</h1>
     </header>
     <main>
-        <section id="episodeSearch">
-            <input type="number" id="episodeId" placeholder="Número de episodio" min="1">
-            <button id="fetchEpisode">Buscar Episodio</button>
-            <div id="episodeDetails"></div>
+        <section id="rickMorty">
+            <button id="fetchRickMorty">Cargar Personajes</button>
+            <ul id="rickMortyCharacters"></ul>
         </section>
     </main>
     <script src="script.js"></script>
