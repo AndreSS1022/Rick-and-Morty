@@ -3,7 +3,7 @@
     background-color: #13141b;
     color: #ffffff;
     background-image: url(image/morty.jpg);
-    background: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
     min-height: 100vh;
