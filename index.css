@@ -3,10 +3,10 @@
     background-color: #13141b;
     color: #ffffff;
     background-image: url(image/morty.jpg);
-    background:cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: top;
-    min-height: 50vh;
+    min-height: 100vh;
 }
 #search-character{
     background-color:rgba(255, 255, 255, 0.9);
