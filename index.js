@@ -48,7 +48,7 @@ const displaySingleCharacter = (character) => {
         </div>
         <div class="col-lg-6 text-center">   
             <div>Especie: <span>${character.species}</span></div>
-            <div>Gender: <span>${character.gender}</span></div>
+            <div>Genero: <span>${character.gender}</span></div>
             <div>Origen: <span>${character.origin.name}</span></div>
             <div>Locacion: <span>${character.location.name}</span></div>
         </div>
@@ -74,7 +74,7 @@ const displayCharacters = (characters) => {
             </div>
             <div class="col-lg-6 text-center">   
                 <div>Especie: <span>${character.species}</span></div>
-                <div>Gender: <span>${character.gender}</span></div>
+                <div>Genero: <span>${character.gender}</span></div>
             </div>
         `;
         characterContainer.appendChild(characterDiv);
