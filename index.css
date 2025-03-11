@@ -2,8 +2,8 @@
 .cnt{
     background-color: #13141b;
     color: #ffffff;
-    background-image: url(image/rick.jpg);
-    background-size: cover;
+    background-image: url(image/morty.jpg);
+    background: cover;
     background-repeat: no-repeat;
     background-position: top;
     min-height: 100vh;
