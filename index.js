@@ -1,13 +1,12 @@
 const searchCharacter = () => {
     let characterInput = document.getElementById('search-character').value;
     
-    // Si el input es un número, buscaremos por ID
+
     if (!isNaN(characterInput) && characterInput.trim() !== '') {
         // Búsqueda por ID
         fetch(`https://rickandmortyapi.com/api/character/${characterInput}`)
             .then(res => res.json())
             .then(data => {
-                // Si buscamos por ID, obtenemos un solo personaje, no un array
                 displaySingleCharacter(data);
             })
             .catch(err => {
@@ -32,7 +31,7 @@ const searchCharacter = () => {
     }
 }
 
-// Para mostrar un solo personaje (cuando buscamos por ID)
+// Para mostrar un solo personaje 
 const displaySingleCharacter = (character) => {
     const characterContainer = document.getElementById("character-container");
     characterContainer.innerHTML = '';
@@ -48,16 +47,16 @@ const displaySingleCharacter = (character) => {
             <p class="character-status">Status: <span>${character.status}</span></p>
         </div>
         <div class="col-lg-6 text-center">   
-            <div>Species: <span>${character.species}</span></div>
+            <div>Especie: <span>${character.species}</span></div>
             <div>Gender: <span>${character.gender}</span></div>
-            <div>Origin: <span>${character.origin.name}</span></div>
-            <div>Location: <span>${character.location.name}</span></div>
+            <div>Origen: <span>${character.origin.name}</span></div>
+            <div>Locacion: <span>${character.location.name}</span></div>
         </div>
     `;
     characterContainer.appendChild(characterDiv);
 }
 
-// Para mostrar múltiples personajes (cuando buscamos por nombre)
+// Para mostrar múltiples personajes 
 const displayCharacters = (characters) => {
     const characterContainer = document.getElementById("character-container");
     characterContainer.innerHTML = '';
@@ -74,7 +73,7 @@ const displayCharacters = (characters) => {
                 <p class="character-status">Status: <span>${character.status}</span></p>
             </div>
             <div class="col-lg-6 text-center">   
-                <div>Species: <span>${character.species}</span></div>
+                <div>Especie: <span>${character.species}</span></div>
                 <div>Gender: <span>${character.gender}</span></div>
             </div>
         `;
