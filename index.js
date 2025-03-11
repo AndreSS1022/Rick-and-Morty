@@ -70,7 +70,7 @@ const displayCharacters = (characters) => {
             </div>
             <div class="col-lg-4 text-center">
                 <h3 class="character-name">${character.name}</h3>
-                <p class="character-status">Status: <span>${character.status}</span></p>
+                <p class="character-status">Estado: <span>${character.status}</span></p>
             </div>
             <div class="col-lg-6 text-center">   
                 <div>Especie: <span>${character.species}</span></div>
